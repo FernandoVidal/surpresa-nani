@@ -1,4 +1,4 @@
-const senhaValida = "nani123"; // Troque por sua senha
+const senhaValida = "nani12"; // Troque por sua senha
 const chaveLocal = "senha_usada";
 
 function verificarSenha() {

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pra você 💖</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Clique abaixo para ver</h2>
+    <button onclick="mostrarFotos()">Veja</button>
+    <div id="carrossel" style="display:none">
+      <img id="imagem" src="fotos/1.jpeg" width="300" style="border-radius: 10px;" />
+      <br/>
+      <button onclick="anterior()">←</button>
+      <button onclick="proxima()">→</button>
+    </div>
+  </div>
+
+  <script>
+    const imagens = ["fotos/1.jpeg", "fotos/2.jpeg", "fotos/3.jpeg", "fotos/4.jpeg", "fotos/5.jpeg", "fotos/6.jpeg", "fotos/7.jpeg", "fotos/8.jpeg"];
+    let atual = 0;
+    const imagem = document.getElementById("imagem");
+
+    function mostrarFotos() {
+      document.getElementById("carrossel").style.display = "block";
+    }
+
+    function proxima() {
+      atual = (atual + 1) % imagens.length;
+      imagem.src = imagens[atual];
+    }
+
+    function anterior() {
+      atual = (atual - 1 + imagens.length) % imagens.length;
+      imagem.src = imagens[atual];
+    }
+  </script>
+</body>
+</html>
